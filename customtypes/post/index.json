@@ -1,0 +1,65 @@
+{
+  "format": "custom",
+  "id": "post",
+  "label": "post",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "post_title": {
+        "type": "Text",
+        "config": {
+          "label": "post title",
+          "placeholder": "titulo do post"
+        }
+      },
+      "post_author": {
+        "type": "StructuredText",
+        "config": {
+          "label": "post author",
+          "placeholder": "autor do post",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "post_category": {
+        "type": "Select",
+        "config": {
+          "label": "post category",
+          "placeholder": "categoria",
+          "options": [
+            "Desporto",
+            "Nutrição",
+            "Informática",
+            "Fitness",
+            "Cinema e TV",
+            "Saúde"
+          ]
+        }
+      },
+      "post_image": {
+        "type": "Image",
+        "config": {
+          "label": "post image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "post_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "post description",
+          "placeholder": "descrição do post",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}

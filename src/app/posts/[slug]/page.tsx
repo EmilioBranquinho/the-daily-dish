@@ -1,0 +1,41 @@
+'use server'
+import { PostDetail } from "@/components/post-detail"
+import { Footer } from "@/components/footer"
+import { getPrismicClient } from "@/services/prismic";
+import { asHTML, asText } from "@prismicio/client";
+
+export default async function PostPage({ params }: {params: Promise<{ slug: string }>}) {
+
+  const { slug } = await params
+
+  const prismic = await getPrismicClient()
+
+  const response = await prismic.getByUID('post', String(slug), {});
+
+  const { post_title, post_image, post_category, post_author, post_description } = response.data
+
+  const post = {
+    slug: slug,
+    post_title: String(post_title),
+    post_description: asHTML(post_description),
+    post_category: String(post_category),
+    post_image: post_image.url!,
+    post_author: asText(post_author),
+    updatedAt: new Date(response.last_publication_date).toLocaleString("pt-Br", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric"
+    })
+  }
+
+  console.log(post)
+
+  return (
+    <div className="min-h-screen bg-background">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <PostDetail post={post}/>
+      </main>
+      <Footer />
+    </div>
+  )
+}
