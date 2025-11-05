@@ -57,16 +57,16 @@ export function Header() {
       {menuOpen && (
         <div className="md:hidden border-t border-border bg-card">
           <div className="px-4 py-4 space-y-4 text-center">
-            <Link href="/" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <Link onClick={()=>setMenuOpen(false)}  href="/" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Início
             </Link>
-            <Link href="/categorias/desporto" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <Link onClick={()=>setMenuOpen(false)}  href="/categorias/desporto" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Desporto
             </Link>
-            <Link href="/categorias/nutricao" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <Link onClick={()=>setMenuOpen(false)}  href="/categorias/nutricao" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Nutrição
             </Link>
-            <Link href="/categorias/informatica" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <Link onClick={()=>setMenuOpen(false)}  href="/categorias/informatica" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Informática
             </Link>
             <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
