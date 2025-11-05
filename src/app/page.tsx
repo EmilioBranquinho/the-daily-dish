@@ -3,6 +3,8 @@ import { HeroSection } from "@/components/hero-section"
 import { PostGrid } from "@/components/post-grid"
 import { Footer } from "@/components/footer"
 import { getPrismicClient } from "@/services/prismic";
+import { Metadata } from "next";
+
 
 export default async function Home() {
 
