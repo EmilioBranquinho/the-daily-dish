@@ -14,9 +14,6 @@ export function Header() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
-            Início
-          </Link>
           <Link href="/categorias/desporto" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Desporto
           </Link>
@@ -25,6 +22,24 @@ export function Header() {
           </Link>
           <Link href="/categorias/informatica" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Informática
+          </Link>
+          <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Direitos humanos
+          </Link>
+          <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Educação
+          </Link>
+          <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Notícias globais
+          </Link>
+            <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Direito
+          </Link>
+            <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Saúde e bem estar
+          </Link>
+            <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Política
           </Link>
         </div>
 
@@ -41,7 +56,7 @@ export function Header() {
 
       {menuOpen && (
         <div className="md:hidden border-t border-border bg-card">
-          <div className="px-4 py-4 space-y-4">
+          <div className="px-4 py-4 space-y-4 text-center">
             <Link href="/" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Início
             </Link>
@@ -54,6 +69,24 @@ export function Header() {
             <Link href="/categorias/informatica" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Informática
             </Link>
+            <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Direitos humanos
+          </Link>
+          <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Educação
+          </Link>
+          <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Notícias globais
+          </Link>
+            <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Direito
+          </Link>
+            <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Saúde e bem estar
+          </Link>
+            <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Política
+          </Link>
           </div>
         </div>
       )}
