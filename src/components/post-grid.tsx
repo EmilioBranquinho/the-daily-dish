@@ -13,18 +13,17 @@ interface GridProps{
 }
 
 interface Postprops{
-   slug: string,
-   post_title: string,
-   post_category: string | SelectField,
-   post_image: string,
-   post_author: string,
-   post_description: string,
-   updatedAt: string
+  slug: string,
+  post_title: string,
+  post_category: string | SelectField,
+  post_image: string,
+  post_author: string,
+  post_description: string,
+  updatedAt: string
 }
 
 export async function PostGrid({text1, text2, posts}: GridProps) {
     
-
   return (
     <section className="py-16 sm:py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

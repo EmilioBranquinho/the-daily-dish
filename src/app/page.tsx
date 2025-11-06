@@ -37,7 +37,7 @@ console.log(posts)
   
   return (
     <div className="min-h-screen bg-background">
-      <HeroSection />
+      {/* <HeroSection /> */}
       <PostGrid posts={posts} text1="Últimas Noticias" text2="Fique por dentro dos acontecimentos mais importantes" />
       <Footer />
     </div>

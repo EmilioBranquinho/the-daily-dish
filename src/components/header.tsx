@@ -60,9 +60,9 @@ export function Header() {
             <Link onClick={()=>setMenuOpen(false)}  href="/" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Início
             </Link>
-            <Link onClick={()=>setMenuOpen(false)}  href="/categorias/desporto" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="/categorias/desporto" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Desporto
-            </Link>
+            </a>
             <Link onClick={()=>setMenuOpen(false)}  href="/categorias/nutricao" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Nutrição
             </Link>
