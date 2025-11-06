@@ -17,7 +17,7 @@ interface PostProps{
 export function PostDetail({ post }: PostProps) {
   return (
     <article className="max-w-3xl mx-auto">
-      {/* Header */}
+      
       <header className="mb-8">
         <div className="mb-4 flex items-center gap-3">
           <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-semibold rounded-full uppercase">
@@ -31,12 +31,10 @@ export function PostDetail({ post }: PostProps) {
         </p>
       </header>
 
-      {/* Featured Image */}
-      <div className="relative w-full h-96 sm:h-[500px] rounded-lg overflow-hidden mb-8 bg-muted">
+      <div className="relative w-full lg:h-96 sm:h-[500px] rounded-lg overflow-hidden mb-8 bg-muted">
         <img src={post.post_image || "/placeholder.svg"} alt={post.post_title} className="w-full h-full object-cover" />
       </div>
 
-      {/* Content - com suporte para HTML do Prismic */}
       <div className="prose-content text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: post.post_description }} />
     </article>
   )
