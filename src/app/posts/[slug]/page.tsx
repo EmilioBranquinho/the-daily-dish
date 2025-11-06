@@ -3,6 +3,38 @@ import { PostDetail } from "@/components/post-detail"
 import { Footer } from "@/components/footer"
 import { getPrismicClient } from "@/services/prismic";
 import { asHTML, asText } from "@prismicio/client";
+import { Metadata } from "next";
+
+interface ParamsProps{
+  params:{
+    slug: string
+  }
+}
+
+export async function generateMetadata({ params }: ParamsProps): Promise<Metadata>{
+
+  const { slug } = await params
+
+  try{
+  const prismic = await getPrismicClient()
+
+  const response = await prismic.getByUID('post', String(slug), {})
+
+  return{
+    title: response.data.post_title,
+    description: String(response.data.post_description),
+    openGraph:{
+      title: String(response.data.post_title),
+      images: String([response.data.post_image]),
+    }
+  }
+ } catch (error) {
+  return{
+    title: "The Daily dish"
+  }
+ }
+}
+
 
 export default async function PostPage({ params }: {params: Promise<{ slug: string }>}) {
 
@@ -39,3 +71,4 @@ export default async function PostPage({ params }: {params: Promise<{ slug: stri
     </div>
   )
 }
+
