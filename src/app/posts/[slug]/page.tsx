@@ -2,19 +2,31 @@
 import { PostDetail } from "@/components/post-detail"
 import { Footer } from "@/components/footer"
 import { getPrismicClient } from "@/services/prismic";
-import { asHTML, asText } from "@prismicio/client";
-import { Metadata } from "next";
+import { asHTML, asText, SelectField } from "@prismicio/client";
+import { Metadata, ResolvingMetadata } from "next";
 
-interface ParamsProps{
-  params:{
-    slug: string
+type Props = {
+  params: Promise<{ slug: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+interface PostProps{
+  post:{
+  slug: string,
+  post_title: string,
+  post_category: string | SelectField,
+  post_image: string,
+  post_author: string,
+  post_description: string,
+  updatedAt: string
   }
 }
 
-export async function generateMetadata({ params }: ParamsProps): Promise<Metadata>{
-
+export async function generateMetadata( { params, searchParams }: Props, parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
   const { slug } = await params
-
+ 
   try{
   const prismic = await getPrismicClient()
 
@@ -33,6 +45,7 @@ export async function generateMetadata({ params }: ParamsProps): Promise<Metadat
     title: "The Daily dish"
   }
  }
+
 }
 
 
