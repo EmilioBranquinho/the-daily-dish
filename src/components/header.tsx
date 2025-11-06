@@ -19,8 +19,8 @@ export function Header() {
           <a href="/categorias/nutricao" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Nutrição
           </a>
-          <a href="/categorias/informatica" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
-            Informática
+          <a href="/categorias/tecnologia" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            Tecnologia
           </a>
           <a href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Direitos humanos
@@ -37,7 +37,7 @@ export function Header() {
             <a href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Saúde e bem estar
           </a>
-            <a href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="/categorias/politica" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Política
           </a>
         </div>
@@ -54,7 +54,7 @@ export function Header() {
       </nav>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-border bg-card">
+        <div className="md:hidden border-t border-border bg-card border-b">
           <div className="px-4 py-4 space-y-4 text-center">
             <a href="/" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Início
@@ -83,7 +83,7 @@ export function Header() {
             <a href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
             Saúde e bem estar
           </a>
-            <a href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="/categorias/politica" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
             Política
           </a>
           </div>

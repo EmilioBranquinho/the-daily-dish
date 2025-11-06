@@ -16,6 +16,7 @@ interface PostProps{
   post_title: string,
   post_category: string | SelectField,
   post_image: string,
+  post_image_text: string,
   post_author: string,
   post_description: string,
   updatedAt: string
@@ -65,6 +66,7 @@ export default async function PostPage({ params }: {params: Promise<{ slug: stri
     post_description: asHTML(post_description),
     post_category: String(post_category),
     post_image: post_image.url!,
+    post_image_text: response.data.post_image.alt!,
     post_author: asText(post_author),
     updatedAt: new Date(response.last_publication_date).toLocaleString("pt-Br", {
       day: "2-digit",

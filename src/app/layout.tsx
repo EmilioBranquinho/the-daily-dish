@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Geist, Geist_Mono } from "next/font/google"
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata ={
   title: "Início - The Daily Dish",
-  description: "Descricao do blog",
+  description: "Seu portal de notícias confiável com análise profunda e conteúdo de qualidade.",
   openGraph:{
     images: ["https://upload.wikimedia.org/wikipedia/commons/0/0e/Apple_News_icon_%28iOS%29.png"]
   },
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

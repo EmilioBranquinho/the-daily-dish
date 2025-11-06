@@ -8,6 +8,7 @@ interface PostProps{
    post_title: string,
    post_category: string,
    post_image: string,
+   post_image_text: string,
    post_author: string,
    post_description: string | RichTextField,
    updatedAt: string
@@ -31,8 +32,9 @@ export function PostDetail({ post }: PostProps) {
         </p>
       </header>
 
-      <div className="relative w-full lg:h-96 sm:h-[500px] rounded-lg overflow-hidden mb-8 bg-muted">
+      <div className="relative w-full lg:h-96 sm:h-[500px] rounded-lg italic mb-8">
         <img src={post.post_image || "/placeholder.svg"} alt={post.post_title} className="w-full h-full object-cover" />
+        <p className="text-center text-xs mt-1">{post.post_image_text}</p>
       </div>
 
       <div className="prose-content text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: post.post_description }} />

@@ -2,10 +2,10 @@ import { PostGrid } from "@/components/post-grid";
 import { getPrismicClient } from "@/services/prismic";
 import { asText, predicate } from "@prismicio/client";
 
-export default async function Informatica(){
-
+export default async function Politica(){
+ 
         const prismic = await getPrismicClient();
-        const category = "Informática"
+        const category = "Política"
     
         const response = await prismic.getByType("post", { 
         orderings: ["document.last_publication_date desc"], 
@@ -15,6 +15,8 @@ export default async function Informatica(){
     
         const posts = response.results.map(post =>{
         const paragraph = post.data.post_description.find(block => block.type === "paragraph") as { text?: string } | undefined;
+
+        console.log(post)
     
             return{
                 slug: post.uid,
@@ -33,7 +35,7 @@ export default async function Informatica(){
 
     return(
         <>
-        <PostGrid posts={posts} text1="Informática" text2="Veja artigos relacionados a Informática"/>
+        <PostGrid posts={posts} text1="Política" text2="Veja artigos relacionados a Política"/>
         </>
     )
 }

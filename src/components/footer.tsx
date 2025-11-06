@@ -22,24 +22,49 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                  Desporto
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                  Nutrição
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">
                   Tecnologia
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">
-                  Economia
+                  Direitos humanos
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">
-                  Ciência
+                  Educação
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">
-                  Cultura
+                  Notícias globais
+                </Link>
+              </li>  
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                  Direito
                 </Link>
               </li>
+              <li>
+                <Link href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                  Saúde e bem estar
+                </Link>
+              </li>
+              <li>
+                <Link href="/categorias/politica" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                   Política
+                </Link>
+              </li>            
             </ul>
           </div>
 

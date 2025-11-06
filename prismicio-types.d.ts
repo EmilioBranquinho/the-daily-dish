@@ -107,10 +107,16 @@ interface PostDocumentData {
   post_category: prismic.SelectField<
     | "Desporto"
     | "Nutrição"
-    | "Informática"
+    | "Tecnologia"
     | "Fitness"
     | "Cinema e TV"
     | "Saúde"
+    | "Política"
+    | "Direito"
+    | "Direitos Humanos"
+    | "Educação"
+    | "Notícias Globais"
+    | "Saúde e bem estar"
   >;
 
   /**
