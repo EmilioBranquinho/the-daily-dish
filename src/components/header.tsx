@@ -57,36 +57,36 @@ export function Header() {
       {menuOpen && (
         <div className="md:hidden border-t border-border bg-card">
           <div className="px-4 py-4 space-y-4 text-center">
-            <Link onClick={()=>setMenuOpen(false)}  href="/" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="/" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Início
-            </Link>
+            </a>
             <a href="/categorias/desporto" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Desporto
             </a>
-            <Link onClick={()=>setMenuOpen(false)}  href="/categorias/nutricao" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="/categorias/nutricao" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Nutrição
-            </Link>
-            <Link onClick={()=>setMenuOpen(false)}  href="/categorias/informatica" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            </a>
+            <a href="/categorias/informatica" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Informática
-            </Link>
-            <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            </a>
+            <a href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
             Direitos humanos
-          </Link>
-          <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+          <a href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
             Educação
-          </Link>
-          <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+          <a href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
             Notícias globais
-          </Link>
-            <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+            <a href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
             Direito
-          </Link>
-            <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+            <a href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
             Saúde e bem estar
-          </Link>
-            <Link href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+            <a href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
             Política
-          </Link>
+          </a>
           </div>
         </div>
       )}
