@@ -34,10 +34,10 @@ export async function generateMetadata( { params, searchParams }: Props, parent:
 
   return{
     title: response.data.post_title,
-    description: String(response.data.post_description),
+    description: asText(response.data.post_description),
     openGraph:{
       title: String(response.data.post_title),
-      images: String([response.data.post_image]),
+      images: String([response.data.post_image.url]),
     }
   }
  } catch (error) {
