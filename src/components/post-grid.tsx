@@ -25,7 +25,7 @@ interface Postprops{
 export async function PostGrid({text1, text2, posts}: GridProps) {
     
   return (
-    <section className="py-16 sm:py-24 lg:py-32 bg-background">
+    <section className="py-10 sm:py-24 lg:py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4 text-pretty">{text1}</h2>
