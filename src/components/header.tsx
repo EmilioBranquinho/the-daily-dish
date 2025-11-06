@@ -65,8 +65,8 @@ export function Header() {
             <a href="/categorias/nutricao" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
               Nutrição
             </a>
-            <a href="/categorias/informatica" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
-              Informática
+            <a href="/categorias/tecnologia" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+              Tecnologia
             </a>
             <a href="#" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
             Direitos humanos
