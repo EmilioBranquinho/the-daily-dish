@@ -9,38 +9,37 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background border-b border-border">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-extrabold text-accent ">
+        <a href="/" className="text-2xl font-extrabold text-accent ">
           The Daily Dish
-        </Link>
-
+        </a>
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/categorias/desporto" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+          <a href="/categorias/desporto" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Desporto
-          </Link>
-          <Link href="/categorias/nutricao" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+          <a href="/categorias/nutricao" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Nutrição
-          </Link>
-          <Link href="/categorias/informatica" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+          <a href="/categorias/informatica" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Informática
-          </Link>
-          <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+          <a href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Direitos humanos
-          </Link>
-          <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+          <a href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Educação
-          </Link>
-          <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+          <a href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Notícias globais
-          </Link>
-            <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+            <a href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Direito
-          </Link>
-            <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+            <a href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Saúde e bem estar
-          </Link>
-            <Link href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+          </a>
+            <a href="#" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
             Política
-          </Link>
+          </a>
         </div>
 
         <button
