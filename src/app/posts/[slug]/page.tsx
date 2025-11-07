@@ -86,7 +86,6 @@ export default async function PostPage({ params }: {params: Promise<{ slug: stri
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <PostDetail post={post}/>
       </main>
-      <Footer />
     </div>
   )
 }
