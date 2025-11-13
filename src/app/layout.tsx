@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Geist, Geist_Mono } from "next/font/google"
 import { Footer } from "@/components/footer";
+import { Providers } from "@/app/providers";
 
 export const metadata: Metadata ={
   title: "Início - The Daily Dish",
@@ -31,12 +32,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <Providers>
     <html lang="en">
       <body className={`font-sans antialiased`}>
         <Header/>
         {children}
         <Footer/>
       </body>
-    </html>
+     </html>
+    </Providers>
   );
 }

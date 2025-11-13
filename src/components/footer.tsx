@@ -1,3 +1,5 @@
+'use client'
+import { signIn } from "next-auth/react"
 import Link from "next/link"
 
 export function Footer() {
@@ -14,6 +16,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Seu portal de notícias confiável com análise profunda e conteúdo de qualidade.
             </p>
+            <button onClick={()=>{signIn("google")}}>LOGIN</button>
           </div>
 
           <div>
