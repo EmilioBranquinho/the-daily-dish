@@ -103,7 +103,7 @@ async function handleAddComment(){
             <h1 className="text-left mx-5 lg:text-xl font-bold pt-5 flex items-center gap-2 text-gray-500"><i><MessageSquareMore color="gray"/></i>comentários</h1>
         <div className="flex lg:ml-20  items-center gap-3 lg:gap-3 mt-3 mx-4 lg:mx-0">
             <textarea
-            className="w-full lg:w-3xl border border-gray-300 rounded-sm indent-2 min-h-20"
+            className="w-full lg:w-3xl border border-gray-300 rounded-sm px-2 min-h-20"
             value={input}
             onChange={(e)=>{setInput(e.target.value)}}
             placeholder="Escreva um comentário"
@@ -114,7 +114,7 @@ async function handleAddComment(){
                     {comments.length < 1 &&(
                     <div className="mt-30 flex flex-col items-center">
                         <i><MessageSquareX size={100} color="gray"/></i>
-                        <h1>Sem comentários</h1>
+                        <h1 className="text-gray-600">Sem comentários</h1>
                     </div>
                     )}
                 {comments && comments.map((comment)=>(
