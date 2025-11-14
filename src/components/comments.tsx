@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 interface CommentProps{
     id: string
     comment: string,
-    taskId?: string | null,
+    postSlug?: string | null,
     username?: string | null,
     useremail?: string | null,
     userPicture?: string | null,
@@ -45,7 +45,6 @@ async function handleGetComment(){
             allComments.push({
                 id: doc.id,
                 comment: doc.data().comment,
-                taskId: doc.data().taskId,
                 username: doc.data().username,
                 useremail: doc.data().useremail,
                 userPicture: doc.data().userPicture,
@@ -133,10 +132,12 @@ async function handleAddComment(){
                                 month: "2-digit",
                                 year: "numeric"
                               }).slice(0,10)}
-                            </span>             
+                            </span>  
+                            {comment.useremail === session?.user?.email &&(
                             <button className="cursor-pointer">
                             <i><Trash2 color="red"/></i>
                             </button>
+                            )}           
                         </div>
                         </div>
                     </div>
