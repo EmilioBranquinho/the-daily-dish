@@ -2,7 +2,7 @@
 
 import { db } from "@/services/firebaseConnection";
 import { addDoc, collection, getDocs, orderBy, query, where } from "firebase/firestore";
-import { Calendar, MessageSquareMore, Trash2 } from "lucide-react";
+import { Calendar, MessageSquareMore, Send, Trash2 } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
@@ -97,15 +97,19 @@ async function handleAddComment(){
         <>
     <div className="flex items-center justify-center">
         <button onClick={()=>{setVisible(!visible)}} className="bg-accent w-full lg:mx-[500px] mx-20 h-10 rounded-sm cursor-pointer">{!visible? "ver comentários": "Ocultar comentários"}</button>
-        <input
-        value={input}
-        onChange={(e)=>{setInput(e.target.value)}}        
-        type="text" />
-        <button className="cursor-pointer" onClick={handleAddComment}>Enviar Comentário</button>
     </div>
     {visible &&(
                 <section className="bg-white h-screen w-full overflow-y-auto mt-10 ">
             <h1 className="text-left mx-5 lg:text-xl font-bold pt-5 flex items-center gap-2 text-gray-500"><i><MessageSquareMore color="gray"/></i>comentários</h1>
+        <div className="flex lg:ml-20 lg:w-full  items-center gap-3 lg:gap-3 mt-3 mx-4 lg:mx-0">
+            <textarea
+            className="w-full lg:w-3xl border border-gray-300 rounded-sm indent-2 min-h-20"
+            value={input}
+            onChange={(e)=>{setInput(e.target.value)}}
+            placeholder="Escreva um comentário"
+            />
+            <button className="cursor-pointer bg-accent w-10 h-10 rounded flex items-center justify-center" onClick={handleAddComment}><i><Send color="white"/></i></button>
+        </div>
                 <div className="flex flex-col items-center mx-5 lg:mx-40">
                 {comments && comments.map((comment)=>(
                     <div key={comment.id} className="mt-5 border border-gray-300 rounded-md w-full min-h-20 flex flex-col justify-center gap-2 px-3 lg:px-10">
