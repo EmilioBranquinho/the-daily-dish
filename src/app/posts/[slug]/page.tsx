@@ -4,6 +4,8 @@ import { Footer } from "@/components/footer"
 import { getPrismicClient } from "@/services/prismic";
 import { asHTML, asText, SelectField } from "@prismicio/client";
 import { Metadata, ResolvingMetadata } from "next";
+import { Calendar, MessageSquare, MessageSquareMore, Trash2 } from "lucide-react";
+import { Comments } from "@/components/comments";
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -84,8 +86,9 @@ export default async function PostPage({ params }: {params: Promise<{ slug: stri
   return (
     <div className="min-h-screen bg-background">
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        <PostDetail post={post}/>
+        <PostDetail post={post}/>   
       </main>
+        <Comments/> 
     </div>
   )
 }
