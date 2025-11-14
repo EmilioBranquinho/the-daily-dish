@@ -138,7 +138,7 @@ async function handleAddComment(){
                     </div>
                     )}
                 {comments && comments.map((comment)=>(
-                    <div key={comment.id} className="mt-5 border border-gray-300 rounded-md w-full min-h-20 flex flex-col justify-center gap-2 px-3 lg:px-10">
+                    <div key={comment.id} className="mt-5 border border-gray-300 rounded-md w-full min-h-20 flex flex-col justify-center gap-2 px-3 py-3 lg:px-10">
                        <div className="flex gap-1 w-full">
                         <div>
                             {comment.useremail === session?.user?.email ?(
