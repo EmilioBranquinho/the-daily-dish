@@ -66,7 +66,7 @@ async function handleAddComment(){
     }
 
     if(!session){
-        router.push('/api/auth/login');
+        router.push(`/api/auth/login?callbackUrl=${encodeURIComponent(window.location.href)}`);
         return;
     }
     try{

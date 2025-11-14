@@ -4,14 +4,17 @@ import Link from "next/link"
 import { signIn } from "next-auth/react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { useSearchParams } from "next/navigation"
 
 export default function LoginPage() {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/";
 
   const handleGoogleSignIn = async () => {
     setIsLoading(true)
     try {
-      await signIn("google")
+      await signIn("google", { callbackUrl })
     } catch (error) {
       console.error("Erro ao fazer login:", error)
       setIsLoading(false)
