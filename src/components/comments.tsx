@@ -1,9 +1,11 @@
 'use client'
 
 import { db } from "@/services/firebaseConnection";
-import { addDoc, collection, getDocs, orderBy, query, where } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, orderBy, query, where } from "firebase/firestore";
 import { Calendar, MessageSquareMore, MessageSquareX, Send, Trash2 } from "lucide-react";
 import { useSession } from "next-auth/react";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface CommentProps{
@@ -26,6 +28,7 @@ export function Comments({ slug }: PostSlugProps){
     const { data: session } = useSession();
     const[input, setInput] = useState("");
     const[comments, setComments] = useState<CommentProps[]>([]);
+    const router = useRouter();
 
     useEffect(()=>{
         handleGetComment();
@@ -62,6 +65,10 @@ async function handleAddComment(){
         return;
     }
 
+    if(!session){
+        router.push('/api/auth/login');
+        return;
+    }
     try{
         const docRef = await addDoc(collection(db, "comments"), {
             comment: input,
@@ -93,10 +100,23 @@ async function handleAddComment(){
     
 };
 
+    async function handleDeleteComment(id: string){
+        await deleteDoc(doc(db, "comments", id))
+        .then(()=>{
+            setComments(comments.filter(comment => comment.id !== id))
+            console.log("Comentário deletado")
+        })
+        .catch((error)=>{
+            console.error("Ocorreu um erro ao deletar o comentário");
+            console.log(error)
+        })
+
+    }
+
     return(
         <>
-    <div className="flex items-center justify-center">
-        <button onClick={()=>{setVisible(!visible)}} className="bg-accent w-full lg:mx-[500px] mx-20 h-10 rounded-sm cursor-pointer">{!visible? "ver comentários": "Ocultar comentários"}</button>
+    <div className="flex items-center mb-5 justify-center">
+        <button onClick={()=>{setVisible(!visible)}} className="bg-accent w-full lg:mx-[500px] mx-20 h-10 rounded-sm cursor-pointer text-white">{!visible? "ver comentários": "ocultar comentários"}</button>
     </div>
     {visible &&(
                 <section className="bg-white h-screen w-full overflow-y-auto mt-10 ">
@@ -144,7 +164,9 @@ async function handleAddComment(){
                               }).slice(0,10)}
                             </span>  
                             {comment.useremail === session?.user?.email &&(
-                            <button className="cursor-pointer">
+                            <button
+                            onClick={(e)=>{handleDeleteComment(comment.id)}}
+                            className="cursor-pointer">
                             <i><Trash2 color="red"/></i>
                             </button>
                             )}           
