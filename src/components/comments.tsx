@@ -1,9 +1,21 @@
+'use client'
+
 import { Calendar, MessageSquareMore, Trash2 } from "lucide-react";
+import { useState } from "react";
 
 export function Comments(){
+
+    const[visible, setVisible] = useState(false)
+
+
     return(
-        <section className="bg-white h-screen w-full overflow-y-auto mt-10 ">
-            <h1 className="text-left mx-5 lg:text-2xl font-bold pt-5 flex items-center gap-2"><i><MessageSquareMore/></i>Comentários</h1>
+        <>
+    <div className="flex items-center justify-center">
+        <button onClick={()=>{setVisible(!visible)}} className="bg-accent w-full lg:mx-[500px] mx-20 h-10 rounded-sm cursor-pointer">{!visible? "ver comentários": "Ocultar comentários"}</button>
+    </div>
+    {visible &&(
+                <section className="bg-white h-screen w-full overflow-y-auto mt-10 ">
+            <h1 className="text-left mx-5 lg:text-xl font-bold pt-5 flex items-center gap-2 text-gray-500"><i><MessageSquareMore color="gray"/></i>comentários</h1>
                 <div className="flex flex-col items-center mx-5 lg:mx-40">
                     <div className="mt-5 border border-gray-300 rounded-md w-full min-h-20 flex flex-col justify-center gap-2 px-3 lg:px-10">
                        <div className="flex gap-1 w-full">
@@ -30,5 +42,7 @@ export function Comments(){
                     </div>
                 </div>
         </section>
+    )}
+        </>
     )
 }
