@@ -2,7 +2,7 @@
 
 import { db } from "@/services/firebaseConnection";
 import { addDoc, collection, getDocs, orderBy, query, where } from "firebase/firestore";
-import { Calendar, MessageSquareMore, Send, Trash2 } from "lucide-react";
+import { Calendar, MessageSquareMore, MessageSquareX, Send, Trash2 } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
@@ -101,7 +101,7 @@ async function handleAddComment(){
     {visible &&(
                 <section className="bg-white h-screen w-full overflow-y-auto mt-10 ">
             <h1 className="text-left mx-5 lg:text-xl font-bold pt-5 flex items-center gap-2 text-gray-500"><i><MessageSquareMore color="gray"/></i>comentários</h1>
-        <div className="flex lg:ml-20 lg:w-full  items-center gap-3 lg:gap-3 mt-3 mx-4 lg:mx-0">
+        <div className="flex lg:ml-20  items-center gap-3 lg:gap-3 mt-3 mx-4 lg:mx-0">
             <textarea
             className="w-full lg:w-3xl border border-gray-300 rounded-sm indent-2 min-h-20"
             value={input}
@@ -111,6 +111,12 @@ async function handleAddComment(){
             <button className="cursor-pointer bg-accent w-10 h-10 rounded flex items-center justify-center" onClick={handleAddComment}><i><Send color="white"/></i></button>
         </div>
                 <div className="flex flex-col items-center mx-5 lg:mx-40">
+                    {comments.length < 1 &&(
+                    <div className="mt-30 flex flex-col items-center">
+                        <i><MessageSquareX size={100} color="gray"/></i>
+                        <h1>Sem comentários</h1>
+                    </div>
+                    )}
                 {comments && comments.map((comment)=>(
                     <div key={comment.id} className="mt-5 border border-gray-300 rounded-md w-full min-h-20 flex flex-col justify-center gap-2 px-3 lg:px-10">
                        <div className="flex gap-1 w-full">
