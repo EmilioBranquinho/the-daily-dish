@@ -77,7 +77,8 @@ async function handleAddComment(){
             useremail: session?.user?.email,
             userPicture: session?.user?.image,
             createdAt: new Date()
-        });
+        })
+        setInput("");
 
         const data = {
             id: docRef.id,
@@ -87,12 +88,8 @@ async function handleAddComment(){
             useremail: session?.user?.email,
             userPicture: session?.user?.image,
             createdAt: new Date()
-        } 
-    
-    // setComments((oldItem)=>[...oldItem, data])  
-        
-    console.log("Comentário adicionado");
-    setInput("");
+        }
+        setComments((oldItem)=>[...oldItem, data]) 
         
     } catch (error){
         console.log(error)
@@ -119,9 +116,9 @@ async function handleAddComment(){
         <button onClick={()=>{setVisible(!visible)}} className="bg-accent w-full lg:mx-[500px] mx-20 h-10 rounded-sm cursor-pointer text-white">{!visible? "ver comentários": "ocultar comentários"}</button>
     </div>
     {visible &&(
-                <section className="bg-white h-screen w-full overflow-y-auto mt-10 ">
+        <section className="bg-white h-screen w-full overflow-y-auto mt-10 ">
             <h1 className="text-left mx-5 lg:text-xl font-bold pt-5 flex items-center gap-2 text-gray-500"><i><MessageSquareMore color="gray"/></i>comentários</h1>
-        <div className="flex lg:ml-20  items-center gap-3 lg:gap-3 mt-3 mx-4 lg:mx-0">
+            <div className="flex lg:ml-20  items-center gap-3 lg:gap-3 mt-3 mx-4 lg:mx-0">
             <textarea
             className="w-full lg:w-3xl border border-gray-300 rounded-sm px-2 min-h-20"
             value={input}
@@ -129,7 +126,7 @@ async function handleAddComment(){
             placeholder="Escreva um comentário"
             />
             <button className="cursor-pointer bg-accent w-10 h-10 rounded flex items-center justify-center" onClick={handleAddComment}><i><Send color="white"/></i></button>
-        </div>
+            </div>
                 <div className="flex flex-col items-center mx-5 lg:mx-40">
                     {comments.length < 1 &&(
                     <div className="mt-30 flex flex-col items-center">
@@ -137,8 +134,8 @@ async function handleAddComment(){
                         <h1 className="text-gray-600">Sem comentários</h1>
                     </div>
                     )}
-                {comments && comments.map((comment)=>(
-                    <div key={comment.id} className="mt-5 border border-gray-300 rounded-md w-full min-h-20 flex flex-col justify-center gap-2 px-3 py-3 lg:px-10">
+                    {comments && comments.map((comment, index)=>(
+                    <div key={index} className="mt-5 border border-gray-300 rounded-md w-full min-h-20 flex flex-col justify-center gap-2 px-3 py-3 lg:px-10">
                        <div className="flex gap-1 w-full">
                         <div>
                             {comment.useremail === session?.user?.email ?(

@@ -2,13 +2,18 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { LogIn, User } from "lucide-react"
+import { useSession } from "next-auth/react"
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const session = useSession();
+
+  console.log(session)
 
   return (
     <header className="sticky top-0 z-50 bg-background border-b border-border">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-1 h-16 flex items-center justify-between">
         <a href="/" className="text-2xl font-extrabold text-accent ">
           The Daily Dish
         </a>

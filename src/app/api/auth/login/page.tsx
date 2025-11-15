@@ -81,9 +81,9 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className="mt-6 text-center text-xs text-muted-foreground">
+        {/* <div className="mt-6 text-center text-xs text-muted-foreground">
           <p>Desenvolvedora por seu time</p>
-        </div>
+        </div> */}
       </div>
     </div>
   )
